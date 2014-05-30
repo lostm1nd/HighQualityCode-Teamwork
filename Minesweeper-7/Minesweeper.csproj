@@ -8,8 +8,8 @@
     <ProjectGuid>{9A136864-6002-44A6-9344-EE96DD773C7C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Minichkite</RootNamespace>
-    <AssemblyName>Minichkite</AssemblyName>
+    <RootNamespace>Minesweeper</RootNamespace>
+    <AssemblyName>MinesweeperGame</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Field.cs" />
     <Compile Include="Telerik.cs" />
   </ItemGroup>
   <ItemGroup>

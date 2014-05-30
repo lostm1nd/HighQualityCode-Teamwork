@@ -1,4 +1,4 @@
-﻿namespace Minichkite
+﻿namespace Minesweeper
 {
     using System;
 

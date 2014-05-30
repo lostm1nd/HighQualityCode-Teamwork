@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-// taiz igra sym ya igral na 8 godinki kato biah u lqlq stefka na komputera v bibliotekata
-
-namespace Igrata_Minichki
+﻿namespace Minesweeper
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
     class Telerik
     {
         static char[,] matrica;
