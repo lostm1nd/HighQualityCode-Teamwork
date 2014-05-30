@@ -1,8 +1,9 @@
 ﻿namespace Minesweeper
 {
     using System;
+    using System.Text;
 
-    public class Field
+    public class Field : IField
     {
         private char[,] field;
 
@@ -30,6 +31,42 @@
         public int Columns
         {
             get { return this.field.GetLength(1); }
+        }
+
+        /// <summary>
+        /// Gets or sets the character in the specified cell
+        /// </summary>
+        /// <param name="row">The number of the row</param>
+        /// <param name="col">The number of the column</param>
+        /// <returns>The character that is in the specified cell</returns>
+        public char this[int row, int col]
+        {
+            get
+            {
+                ValidateIndexes(row, col);
+
+                return this.field[row, col];
+            }
+
+            set
+            {
+                ValidateIndexes(row, col);
+
+                this.field[row, col] = value;
+            }
+        }
+
+        private void ValidateIndexes(int row, int col)
+        {
+            if (row < 0 || row >= this.Rows)
+            {
+                throw new IndexOutOfRangeException("No such row. Rows are in range [0, " + this.Rows + ")");
+            }
+
+            if (col < 0 || col >= this.Columns)
+            {
+                throw new IndexOutOfRangeException("No such column. Columns are in range [0, " + this.Columns + ")");
+            }
         }
 
         /// <summary>
@@ -110,6 +147,28 @@
             return neighbouringMinesCount;
         }
 
+        public override string ToString()
+        {
+            StringBuilder stringifyField = new StringBuilder();
+
+            stringifyField.AppendLine("    0 1 2 3 4 5 6 7 8 9");
+            stringifyField.AppendLine("   ----------------------");
+
+            for (int row = 0; row < this.Rows; row++)
+            {
+                stringifyField.Append(row + " | ");
+                for (int col = 0; col < this.Columns; col++)
+                {
+                    stringifyField.Append(this.field[row, col] + " ");
+                }
+                stringifyField.AppendLine("|");
+            }
+
+            stringifyField.AppendLine("   ----------------------");
+
+            return stringifyField.ToString();
+        }
+
         private void ValidateAndInitializeField(int rows, int cols)
         {
             if (rows < 5)
@@ -124,5 +183,8 @@
 
             this.field = new char[rows, cols];
         }
+
+
+        
     }
 }

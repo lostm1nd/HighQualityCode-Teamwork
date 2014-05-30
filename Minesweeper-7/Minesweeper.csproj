@@ -44,6 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Field.cs" />
+    <Compile Include="IField.cs" />
+    <Compile Include="IGeneratable.cs" />
+    <Compile Include="IGenerator.cs" />
+    <Compile Include="Mine.cs" />
+    <Compile Include="MineGenerator.cs" />
+    <Compile Include="RandomNumber.cs" />
     <Compile Include="Telerik.cs" />
   </ItemGroup>
   <ItemGroup>
