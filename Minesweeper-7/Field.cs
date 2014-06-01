@@ -5,8 +5,7 @@
 
     public class Field : IField
     {
-        private char[,] field;
-
+        public char[,] field;        
         /// <summary>
         /// Create a minefield with a specific size.
         /// </summary>
@@ -149,6 +148,7 @@
 
         public override string ToString()
         {
+
             StringBuilder stringifyField = new StringBuilder();
 
             stringifyField.AppendLine("    0 1 2 3 4 5 6 7 8 9");

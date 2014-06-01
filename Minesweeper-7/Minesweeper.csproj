@@ -43,13 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleInputOutputManager.cs" />
     <Compile Include="Field.cs" />
     <Compile Include="IField.cs" />
     <Compile Include="IGeneratable.cs" />
     <Compile Include="IGenerator.cs" />
+    <Compile Include="IInputOutputManager.cs" />
+    <Compile Include="IScoreBoard.cs" />
     <Compile Include="Mine.cs" />
     <Compile Include="MineGenerator.cs" />
     <Compile Include="RandomNumber.cs" />
+    <Compile Include="ScoreBoard.cs" />
     <Compile Include="Telerik.cs" />
   </ItemGroup>
   <ItemGroup>
