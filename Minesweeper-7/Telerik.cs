@@ -355,9 +355,9 @@
             }
         }
 
-        static void Main(string[] args)
-        {
-            NovaIgra();
-        }
+        //static void Main(string[] args)
+        //{
+        //    NovaIgra();
+        //}
     }
 }

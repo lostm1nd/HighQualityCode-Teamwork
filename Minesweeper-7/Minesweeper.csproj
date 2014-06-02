@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleInputOutputManager.cs" />
+    <Compile Include="Engine.cs" />
     <Compile Include="Field.cs" />
+    <Compile Include="IEngine.cs" />
     <Compile Include="IField.cs" />
     <Compile Include="IGeneratable.cs" />
     <Compile Include="IGenerator.cs" />
@@ -52,6 +54,7 @@
     <Compile Include="IScoreBoard.cs" />
     <Compile Include="Mine.cs" />
     <Compile Include="MineGenerator.cs" />
+    <Compile Include="Minesweeper.cs" />
     <Compile Include="RandomNumber.cs" />
     <Compile Include="ScoreBoard.cs" />
     <Compile Include="Telerik.cs" />
