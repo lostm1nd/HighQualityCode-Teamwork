@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using Wintellect.PowerCollections;
 
     /// <summary>
     /// Represents a scoreboard.
@@ -12,14 +13,14 @@
     {
         private const int MaxShowedPlayersCount = 5;
 
-        private readonly Dictionary<int, string> scoreBoard;
+        private readonly OrderedMultiDictionary<int, string> scoreBoard;
 
         /// <summary>
         /// Constructs an instance of the class.
         /// </summary>
         public ScoreBoard()
         {
-            this.scoreBoard = new Dictionary<int, string>();
+            this.scoreBoard = new OrderedMultiDictionary<int, string>(true);
         }
 
         /// <summary>
@@ -50,7 +51,7 @@
             }
             else
             {
-                this.scoreBoard[playerScore]=playerName;
+                this.scoreBoard[playerScore].Add(playerName);
             }
         }
 
