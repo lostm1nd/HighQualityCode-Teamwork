@@ -1,0 +1,30 @@
+﻿namespace Minesweeper
+{
+    using System.Linq;
+    using System;
+
+    /// <summary>
+    /// Represents the engine that executes the main logic of the game. 
+    /// </summary>
+    public class Engine: IEngine
+    {
+        private IInputOutputManager renderer;
+        private IScoreBoard scoreBoard;
+        private Field field;
+
+        public Engine()
+        {
+            this.renderer = new ConsoleInputOtputManager();
+            this.scoreBoard = new ScoreBoard();
+            this.field = new Field(5, 10);
+        }
+        public void Play()
+        {
+            renderer.PrintInitialMessage();
+            renderer.PrintGameField(this.field, false);
+            //TODO: Implement the main playing logic of the game.
+           // throw new NotImplementedException();
+        }
+    }
+}
+
