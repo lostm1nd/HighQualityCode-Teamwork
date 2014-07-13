@@ -1,26 +1,38 @@
 ﻿namespace Minesweeper
 {
+    using System;
+    using Contracts;
+
     public class MineGenerator : IGenerator
     {
-        private IGeneratable mine;
+        private IField field;
 
-        public MineGenerator(IGeneratable mine)
+        /// <summary>
+        /// Given a field the MineGenerator can populate it with any number of IGeneratable items
+        /// </summary>
+        /// <param name="fieldToPopulate">The field which will be populated</param>
+        public MineGenerator(IField fieldToPopulate)
         {
-            this.mine = mine;
+            this.field = fieldToPopulate;
         }
 
-        public void Generate(IField field, int minesToGenerateCount)
+        /// <summary>
+        /// Generates an item any given times
+        /// </summary>
+        /// <param name="item">The item to generate</param>
+        /// <param name="itemCount">Times the item will be generated</param>
+        public void Generate(IGeneratable item, int itemCount)
         {
             int generatedMines = 0;
 
-            while (generatedMines < minesToGenerateCount)
+            while (generatedMines < itemCount)
             {
-                int rowToPutMine = RandomNumber.Get(field.Rows);
-                int colToPutMine = RandomNumber.Get(field.Columns);
+                int rowToPutMine = RandomNumber.Get(this.field.Rows);
+                int colToPutMine = RandomNumber.Get(this.field.Columns);
 
-                if (field[rowToPutMine, colToPutMine] != this.mine.Symbol)
+                if (field[rowToPutMine, colToPutMine] != item.Symbol)
                 {
-                    field[rowToPutMine, colToPutMine] = this.mine.Symbol;
+                    field[rowToPutMine, colToPutMine] = item.Symbol;
                     generatedMines++;
                 }
             }

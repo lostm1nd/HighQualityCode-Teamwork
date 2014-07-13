@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Minesweeper.ConsoleInputOtputManager" BaseTypeListCollapsed="true">
+  <Class Name="Minesweeper.ConsoleInputOutputManager" BaseTypeListCollapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gQAAAAAAAAAgAIAAAAQAAAAAAIAAAAQBAAAQAAAAAAA=</HashCode>
@@ -11,7 +11,7 @@
   <Class Name="Minesweeper.Engine" BaseTypeListCollapsed="true">
     <Position X="9.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAgAA=</HashCode>
+      <HashCode>AACAAAAAAAAAAgAAAAgAAIAAAAAAAAAAgAAAAAAAgCA=</HashCode>
       <FileName>Engine.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -27,7 +27,7 @@
   <Class Name="Minesweeper.Mine" BaseTypeListCollapsed="true">
     <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>Mine.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -35,7 +35,7 @@
   <Class Name="Minesweeper.MineGenerator" BaseTypeListCollapsed="true">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
       <FileName>MineGenerator.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -69,46 +69,46 @@
       <FileName>Telerik.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="Minesweeper.IEngine">
-    <Position X="4" Y="4.5" Width="1.5" />
+  <Interface Name="Minesweeper.Contracts.IEngine">
+    <Position X="3.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
-      <FileName>IEngine.cs</FileName>
+      <FileName>Contracts\IEngine.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Minesweeper.IField">
-    <Position X="11.5" Y="4.5" Width="1.5" />
+  <Interface Name="Minesweeper.Contracts.IField">
+    <Position X="7.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAEAACAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
-      <FileName>IField.cs</FileName>
+      <FileName>Contracts\IField.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Minesweeper.IGeneratable">
-    <Position X="10" Y="4.5" Width="1.5" />
+  <Interface Name="Minesweeper.Contracts.IGeneratable">
+    <Position X="5.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
-      <FileName>IGeneratable.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Contracts\IGeneratable.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Minesweeper.IGenerator">
-    <Position X="10" Y="3.5" Width="1.5" />
+  <Interface Name="Minesweeper.Contracts.IGenerator">
+    <Position X="5.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
-      <FileName>IGenerator.cs</FileName>
+      <FileName>Contracts\IGenerator.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Minesweeper.IInputOutputManager">
-    <Position X="7" Y="4.5" Width="1.5" />
+  <Interface Name="Minesweeper.Contracts.IInputOutputManager">
+    <Position X="9" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAAAgAIAAAAQAAAAAAIAAAAQBAAAQAAAAAAA=</HashCode>
-      <FileName>IInputOutputManager.cs</FileName>
+      <FileName>Contracts\IInputOutputManager.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Minesweeper.IScoreBoard">
-    <Position X="8.5" Y="4.5" Width="1.5" />
+  <Interface Name="Minesweeper.Contracts.IScoreBoard">
+    <Position X="10.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAEAAAAA=</HashCode>
-      <FileName>IScoreBoard.cs</FileName>
+      <FileName>Contracts\IScoreBoard.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Tahoma" Size="8.25" />

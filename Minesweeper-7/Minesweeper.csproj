@@ -49,12 +49,12 @@
     <Compile Include="ConsoleInputOutputManager.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="Field.cs" />
-    <Compile Include="IEngine.cs" />
-    <Compile Include="IField.cs" />
-    <Compile Include="IGeneratable.cs" />
-    <Compile Include="IGenerator.cs" />
-    <Compile Include="IInputOutputManager.cs" />
-    <Compile Include="IScoreBoard.cs" />
+    <Compile Include="Contracts\IEngine.cs" />
+    <Compile Include="Contracts\IField.cs" />
+    <Compile Include="Contracts\IGeneratable.cs" />
+    <Compile Include="Contracts\IGenerator.cs" />
+    <Compile Include="Contracts\IInputOutputManager.cs" />
+    <Compile Include="Contracts\IScoreBoard.cs" />
     <Compile Include="Mine.cs" />
     <Compile Include="MineGenerator.cs" />
     <Compile Include="Minesweeper.cs" />
@@ -67,7 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="ClassDiagram1.cd" />
+    <None Include="MinesweeperClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

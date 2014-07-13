@@ -2,6 +2,7 @@
 {
     using System;
     using System.Text;
+    using Contracts;
 
     public class Field : IField
     {

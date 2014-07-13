@@ -1,14 +1,14 @@
 ﻿namespace Minesweeper
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
+
+    using Contracts;
 
     /// <summary>
     /// Manages the input and output operations of the game.
     /// </summary>
-    public class ConsoleInputOtputManager : IInputOutputManager
+    public class ConsoleInputOutputManager : IInputOutputManager
     {
         /// <summary>
         /// Prints the initial message - welcome message and commands list

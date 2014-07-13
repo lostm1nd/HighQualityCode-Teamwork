@@ -1,7 +1,8 @@
 ﻿namespace Minesweeper
 {
-    using System.Linq;
     using System;
+    using System.Linq;
+    using Contracts;
 
     /// <summary>
     /// Represents the engine that executes the main logic of the game. 
@@ -15,7 +16,7 @@
         private string currentUserInput;
         public Engine()
         {
-            this.renderer = new ConsoleInputOtputManager();
+            this.renderer = new ConsoleInputOutputManager();
             this.scoreBoard = new ScoreBoard();
             this.field = new Field(5, 10);
             this.playing = true;

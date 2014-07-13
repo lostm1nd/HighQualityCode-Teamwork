@@ -1,16 +1,18 @@
 ﻿namespace MinesweeperTests
 {
     using System;
-    using Minesweeper;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.IO;
-    using TestMinesweeper;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    
+    using Minesweeper;
+    using Minesweeper.Contracts;
 
+    using TestMinesweeper;
 
     [TestClass]
     public class TestIOManager
     {
-        private readonly IInputOutputManager inputOutputManager = new ConsoleInputOtputManager();
+        private readonly IInputOutputManager inputOutputManager = new ConsoleInputOutputManager();
 
         [TestMethod]
         public void TestInitialMessage()

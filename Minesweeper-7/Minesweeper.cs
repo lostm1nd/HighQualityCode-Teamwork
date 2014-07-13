@@ -2,6 +2,7 @@
 {
     using System;
     using System.Linq;
+    using Contracts;
 
     /// <summary>
     /// Represents the main application from which will start the game.

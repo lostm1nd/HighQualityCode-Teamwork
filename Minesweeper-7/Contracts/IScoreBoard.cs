@@ -1,7 +1,5 @@
-﻿namespace Minesweeper
+﻿namespace Minesweeper.Contracts
 {
-    using System;
-
     /// <summary>
     /// An interface for the score board of the game.
     /// </summary>

@@ -1,6 +1,7 @@
 ﻿namespace Minesweeper
 {
     using System;
+    using Contracts;
 
     public class Mine : IGeneratable
     {
@@ -15,11 +16,6 @@
         {
             get { return this.symbol; }
             private set { this.symbol = value; }
-        }
-
-        public char Produce()
-        {
-            throw new NotImplementedException();
         }
     }
 }
