@@ -55,9 +55,11 @@
     <Compile Include="Contracts\IGenerator.cs" />
     <Compile Include="Contracts\IInputOutputManager.cs" />
     <Compile Include="Contracts\IScoreBoard.cs" />
+    <Compile Include="FieldFactory.cs" />
     <Compile Include="Mine.cs" />
     <Compile Include="MineGenerator.cs" />
     <Compile Include="Minesweeper.cs" />
+    <Compile Include="MinesweeperField.cs" />
     <Compile Include="RandomNumber.cs" />
     <Compile Include="ScoreBoard.cs" />
     <Compile Include="Telerik.cs" />
