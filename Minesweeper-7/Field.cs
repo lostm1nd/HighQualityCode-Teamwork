@@ -6,7 +6,8 @@
 
     public class Field : IField
     {
-        public char[,] field;        
+        public char[,] field;
+
         /// <summary>
         /// Create a minefield with a specific size.
         /// </summary>
@@ -36,8 +37,8 @@
         /// <summary>
         /// Gets or sets the character in the specified cell
         /// </summary>
-        /// <param name="row">The number of the row</param>
-        /// <param name="col">The number of the column</param>
+        /// <param name="row">The number of the rows</param>
+        /// <param name="col">The number of the columns</param>
         /// <returns>The character that is in the specified cell</returns>
         public char this[int row, int col]
         {
@@ -56,6 +57,29 @@
             }
         }
 
+        public override string ToString()
+        {
+
+            StringBuilder stringifyField = new StringBuilder();
+
+            stringifyField.AppendLine("    0 1 2 3 4 5 6 7 8 9");
+            stringifyField.AppendLine("   ----------------------");
+
+            for (int row = 0; row < this.Rows; row++)
+            {
+                stringifyField.Append(row + " | ");
+                for (int col = 0; col < this.Columns; col++)
+                {
+                    stringifyField.Append(this.field[row, col] + " ");
+                }
+                stringifyField.AppendLine("|");
+            }
+
+            stringifyField.AppendLine("   ----------------------");
+
+            return stringifyField.ToString();
+        }
+
         private void ValidateIndexes(int row, int col)
         {
             if (row < 0 || row >= this.Rows)
@@ -69,6 +93,25 @@
             }
         }
 
+        private void ValidateAndInitializeField(int rows, int cols)
+        {
+            if (rows < 5)
+            {
+                throw new ArgumentException("The rows must be at least 5.");
+            }
+
+            if (cols < 5)
+            {
+                throw new ArgumentException("The columns must be at least 5.");
+            }
+
+            this.field = new char[rows, cols];
+        }
+
+        // These methods should be in separate classes.
+        // May use some creational pattern to build
+        // the field and populate it with mines.
+        #region Methods that need to be extracted
         /// <summary>
         /// Generate mines on the current field and fill the number
         /// of neighbouring mines.
@@ -146,46 +189,6 @@
 
             return neighbouringMinesCount;
         }
-
-        public override string ToString()
-        {
-
-            StringBuilder stringifyField = new StringBuilder();
-
-            stringifyField.AppendLine("    0 1 2 3 4 5 6 7 8 9");
-            stringifyField.AppendLine("   ----------------------");
-
-            for (int row = 0; row < this.Rows; row++)
-            {
-                stringifyField.Append(row + " | ");
-                for (int col = 0; col < this.Columns; col++)
-                {
-                    stringifyField.Append(this.field[row, col] + " ");
-                }
-                stringifyField.AppendLine("|");
-            }
-
-            stringifyField.AppendLine("   ----------------------");
-
-            return stringifyField.ToString();
-        }
-
-        private void ValidateAndInitializeField(int rows, int cols)
-        {
-            if (rows < 5)
-            {
-                throw new ArgumentException("The rows must be at least 5.");
-            }
-
-            if (cols < 5)
-            {
-                throw new ArgumentException("The columns must be at least 5.");
-            }
-
-            this.field = new char[rows, cols];
-        }
-
-
-        
+        #endregion
     }
 }

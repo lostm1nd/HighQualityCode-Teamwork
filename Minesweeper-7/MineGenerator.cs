@@ -5,7 +5,7 @@
 
     public class MineGenerator : IGenerator
     {
-        private IField field;
+        private readonly IField field;
 
         /// <summary>
         /// Given a field the MineGenerator can populate it with any number of IGeneratable items
