@@ -8,4 +8,4 @@ TODO:
 	1.5 New class 'MineGenerator' - implements 'IGenerator'   
 	1.6 New class 'AdjacencyMap' - counts the appearance of a 'IGenerable' object around every cell in 2d array   
     
-2. ...
+2. Use a creational design pattern to build and populate the field with mines
