@@ -11,8 +11,13 @@
     {
         internal static void Main()
         {
-            IEngine engine = new Engine();
-            engine.Play();
+            FieldFactory minesweeperFactory = new MinesweeperField();
+            IField minesweeperField = minesweeperFactory.CreateField();
+
+            Console.WriteLine(minesweeperField.ToString());
+
+            //IEngine engine = new Engine();
+            //engine.Play();
         }
     }
 }

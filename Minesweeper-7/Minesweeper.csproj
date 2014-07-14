@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleInputOutputManager.cs" />
+    <Compile Include="Contracts\IAdjacencyMap.cs" />
+    <Compile Include="MinesweeperAdjacencyMap.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="Field.cs" />
     <Compile Include="Contracts\IEngine.cs" />
