@@ -17,7 +17,7 @@
         /// </summary>
         /// <param name="gameField">The field to be printed.</param>
         /// <param name="hasBoomed">check if player has explode</param>
-        void PrintGameField(Field gameField, bool hasBoomed);
+        void PrintGameField(IField gameField, bool hasBoomed);
 
         /// <summary>
         /// Prints an explosion message when the user step on a mine.

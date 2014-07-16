@@ -11,14 +11,14 @@
     {
         private IInputOutputManager renderer;
         private IScoreBoard scoreBoard;
-        private Field field;
+        private IField field;
         private bool playing;
         private string currentUserInput;
-        public Engine()
+        public Engine(IField field)
         {
             this.renderer = new ConsoleInputOutputManager();
             this.scoreBoard = new ScoreBoard();
-            this.field = new Field(5, 10);
+            this.field = field;
             this.playing = true;
         }
         public void Play()
@@ -30,21 +30,30 @@
             while (playing)
             {
                 currentUserInput = renderer.GetUserInput();
+                CheckCurrentCommand(currentUserInput);
+
             }
             
             throw new NotImplementedException();
         }
 
-        private static void CheckCurrentCommand(string command)
+        private void CheckCurrentCommand(string command)
         {
+            string clearedCommand = command.Replace(" ", String.Empty);
+
             //TODO: Implement this method
-            if (command.Length == 2)
+            if (clearedCommand.Length == 2)
             {
+                int currentRow = int.Parse(clearedCommand[0].ToString());
+                int currentCol = int.Parse(clearedCommand[1].ToString());
+
+                
+                this.renderer.PrintGameField(this.field, false);
                 throw new NotImplementedException();
             }
             else
             {
-                switch (command)
+                switch (clearedCommand)
                 {
                     case "exit": Environment.Exit(1); break;
                     case "restart": throw new NotImplementedException();
@@ -54,6 +63,11 @@
                 }
             }
             
+        }
+
+        private static bool CheckIsValidNumbers(string command)
+        {
+            return true;
         }
     }
 }
