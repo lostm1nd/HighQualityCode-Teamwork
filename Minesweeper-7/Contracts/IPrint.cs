@@ -3,9 +3,9 @@
     using System;
 
     /// <summary>
-    /// Manages the input and output operations of the game.
+    /// Manages the output operations of the game.
     /// </summary>
-    public interface IInputOutputManager
+    public interface IPrint
     {
         /// <summary>
         /// Prints the initial message - welcome message and commands list
@@ -17,7 +17,7 @@
         /// </summary>
         /// <param name="gameField">The field to be printed.</param>
         /// <param name="hasBoomed">check if player has explode</param>
-        void PrintGameField(IField gameField, bool hasBoomed);
+        void PrintGameField(Field gameField, bool hasBoomed);
 
         /// <summary>
         /// Prints an explosion message when the user step on a mine.
@@ -46,16 +46,5 @@
         /// </summary>
         void PrintQuitMessage();
 
-        /// <summary>
-        /// Gets the user nickname.
-        /// </summary>
-        /// <returns>Returns the user's nickname.</returns>
-        string GetUserNickname();
-
-        /// <summary>
-        /// Gets the user input - command or coordinates (row and column).
-        /// </summary>
-        /// <returns>Returns the user input.</returns>
-        string GetUserInput();
     }
 }

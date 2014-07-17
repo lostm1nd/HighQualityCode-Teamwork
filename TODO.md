@@ -10,10 +10,10 @@ TODO:
     
 2. ~~Use a creational design pattern to build and populate the field with mines~~ Implemented Factory design pattern   
     
-3. The Engine class should implement dependency inversion principle and recieve the objects that it will work with   
+3. The Engine class should implement dependency inversion principle and receive the objects that it will work with   
    
-4. The IInputOutputManager interface can be divided into two - rendering interfaces that handles all printing and input
-reader interface that handles all input.    
+4. ~~The IInputOutputManager interface can be divided into two - rendering interfaces that handles all printing and input
+reader interface that handles all input.~~    
     
 5. Refactor lifespan of variables and conditional statements ( (variable < interval && interval < variable) OR
 (inverval < variable && variable < interval) )

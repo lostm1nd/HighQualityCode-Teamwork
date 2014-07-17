@@ -6,7 +6,7 @@
 
     public class Field : IField
     {
-        public char[,] field;
+        public char[,] field {get; set;}
 
         /// <summary>
         /// Create a minefield with a specific size.

@@ -79,7 +79,7 @@
   <Interface Name="Minesweeper.Contracts.IField">
     <Position X="7.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAEAACAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAEAECAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
       <FileName>Contracts\IField.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -97,11 +97,12 @@
       <FileName>Contracts\IGenerator.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Minesweeper.Contracts.IInputOutputManager">
+  <Interface Name="Minesweeper.Contracts.IPrint">
     <Position X="9" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAgAIAAAAQAAAAAAIAAAAQBAAAQAAAAAAA=</HashCode>
-      <FileName>Contracts\IInputOutputManager.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAIAAAAQAAAAAAIAAAAQBAAAQAAAAAAA=</HashCode>
+      <FileName>Contracts\IPrint.cs</FileName>
+      <NewMemberFileName>Contracts\IInputOutputManager.cs</NewMemberFileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Minesweeper.Contracts.IScoreBoard">
@@ -109,6 +110,14 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAEAAAAA=</HashCode>
       <FileName>Contracts\IScoreBoard.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Minesweeper.Contracts.IReadInput" Collapsed="true">
+    <Position X="8.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IReadInput.cs</FileName>
+      <NewMemberFileName>Contracts\IInputOutputManager.cs</NewMemberFileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Tahoma" Size="8.25" />

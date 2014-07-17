@@ -29,7 +29,7 @@
         /// </summary>
         /// <param name="gameField">The field to be printed.</param>
         /// <param name="hasBoomed">check if player has explode</param>
-        public void PrintGameField(Field gameField, bool hasBoomed)
+        public void PrintGameField(IField gameField, bool hasBoomed)
         {
             if (gameField == null)
             {
