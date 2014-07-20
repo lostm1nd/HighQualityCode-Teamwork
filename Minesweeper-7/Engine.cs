@@ -12,29 +12,37 @@
         private IInputOutputManager renderer;
         private IScoreBoard scoreBoard;
         private IField field;
+        private IField emptyField;
         private bool playing;
         private string currentUserInput;
+        private int currentUserScore;
+        private int openedCells;
+        private string currentUserName;
+        private int currentRow;
+        private int currentCol;
         public Engine(IField field)
         {
             this.renderer = new ConsoleInputOutputManager();
             this.scoreBoard = new ScoreBoard();
+            this.emptyField = new Field(5, 10);
             this.field = field;
             this.playing = true;
+            this.currentUserName = "Player";
+            this.currentUserScore = 0;
+            this.openedCells = 0;
         }
         public void Play()
         {
             //TODO: Implement the main playing logic of the game.
             renderer.PrintInitialMessage();
-            renderer.PrintGameField(this.field, false);
+            renderer.PrintGameField(this.emptyField, false);
 
             while (playing)
             {
                 currentUserInput = renderer.GetUserInput();
                 CheckCurrentCommand(currentUserInput);
-
             }
             
-            throw new NotImplementedException();
         }
 
         private void CheckCurrentCommand(string command)
@@ -44,20 +52,29 @@
             //TODO: Implement this method
             if (clearedCommand.Length == 2)
             {
-                int currentRow = int.Parse(clearedCommand[0].ToString());
-                int currentCol = int.Parse(clearedCommand[1].ToString());
+                 currentRow = int.Parse(clearedCommand[0].ToString());
+                 currentCol = int.Parse(clearedCommand[1].ToString());
 
-                
-                this.renderer.PrintGameField(this.field, false);
-                throw new NotImplementedException();
+                if (this.field[currentRow, currentCol] == '*')
+                {
+                    EndGame();
+                }
+                else
+                {
+                    OpenNewCell();
+                }           
             }
             else
             {
                 switch (clearedCommand)
                 {
-                    case "exit": Environment.Exit(1); break;
-                    case "restart": throw new NotImplementedException();
-                    case "top": throw new NotImplementedException();
+                    case "exit": 
+                        this.renderer.PrintQuitMessage();
+                        Environment.Exit(1); break;
+                    case "restart": 
+                        RestartGame(); break;
+                    case "top": 
+                        throw new NotImplementedException();
                     default:
                         break;
                 }
@@ -65,9 +82,31 @@
             
         }
 
-        private static bool CheckIsValidNumbers(string command)
+        private void EndGame()
         {
-            return true;
+            this.emptyField[currentRow, currentCol] = this.field[currentRow, currentCol];
+            this.renderer.PrintGameField(this.emptyField, true);
+            this.playing = false;
+            this.renderer.PrintExplosionMessage(this.openedCells);
+            this.currentUserName = this.renderer.GetUserNickname();
+            this.scoreBoard.AddPlayer(this.currentUserName, this.currentUserScore);
+        }
+
+        private void OpenNewCell()
+        {
+            this.emptyField[currentRow, currentCol] = this.field[currentRow, currentCol];
+            currentUserScore += int.Parse(this.field[currentRow, currentCol].ToString());
+            openedCells++;
+            this.renderer.PrintGameField(this.emptyField, false);
+        }
+
+        private void RestartGame()
+        {
+            FieldFactory istanceOfFactory = new MinesweeperField();
+            this.field = istanceOfFactory.CreateField();
+            this.emptyField = new Field(5, 10);
+            this.playing = true;
+            Play();
         }
     }
 }
