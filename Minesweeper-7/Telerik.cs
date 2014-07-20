@@ -7,7 +7,7 @@
 
     class Telerik
     {
-        static char[,] matrica;
+        static char[,] matrix;
         static char[,] playerMatrix;
         static bool gameInProgress;
         static bool emptyScoreboard = true;
@@ -95,8 +95,8 @@
         static int GetNeighbourMinesCount(char[,] matrica, int row, int col)
         {
             int minesCount = 0;
-            int[] rowPositions = {-1, -1, -1, 0, 1, 1, 1, 0 };
-            int[] colPositions = {-1, 0, 1, 1, 1, 0, -1, -1 };
+            int[] rowPositions = { -1, -1, -1, 0, 1, 1, 1, 0 };
+            int[] colPositions = { -1, 0, 1, 1, 1, 0, -1, -1 };
             int currentNeighbourRow = 0;
             int currentNeighbourCol = 0;
 
@@ -108,45 +108,45 @@
                 currentNeighbourCol = col + colPositions[position];
 
 
-                if (currentNeighbourRow < 0 
-                    
-                    || 
-                    
-                    currentNeighbourRow >= matrica.GetLength(0) 
-                    
+                if (currentNeighbourRow < 0
+
+                    ||
+
+                    currentNeighbourRow >= matrica.GetLength(0)
+
                     ||
 
 
-                    currentNeighbourCol < 0 
-                    
+                    currentNeighbourCol < 0
+
                     ||
-                    
+
                     currentNeighbourCol >= matrica.GetLength(1))
                 {
                     continue;
                 }
 
-                if (matrica[currentNeighbourRow, 
+                if (matrix[currentNeighbourRow,
                     currentNeighbourCol] == '*')
                 {
 
-                 
+
                     minesCount++;
                 }
 
             }
             return minesCount;
         }
-        static void procheti()
-        {   Console.WriteLine();
+        static void Read()
+        {
+            Console.WriteLine();
             Console.Write("Enter row and column: ");
             string input = Console.ReadLine();
             input.Trim();
 
-            if (input == 
-                
+            if (input ==
+
                 "exit")
-           
             {
                 Exit();
 
@@ -156,14 +156,14 @@
 
             }
 
-            if (input 
-                
-                == 
-                
+            if (input
+
+                ==
+
                 "restart")
             {
 
-                NovaIgra();
+                newGame();
 
 
                 return;
@@ -197,7 +197,7 @@
             }
 
             int colInput;
-            proverka = 
+            proverka =
                 int.TryParse(
                 input[2].ToString(),
                 out colInput);
@@ -209,15 +209,15 @@
         {
             Environment.Exit(1);
         }
-        static void NovaIgra()
+        static void newGame()
         {
             gameInProgress = true;
             cellsOpened = 0;
 
             playerMatrix = new char[5, 10];
-            matrica = new char[5, 10];
+            matrix = new char[5, 10];
 
-            matrica = GenerateMinesweeperMatrix();
+            matrix = GenerateMinesweeperMatrix();
             for (int i = 0; i < playerMatrix.GetLength(0); i++)
             {
                 for (int j = 0; j < playerMatrix.GetLength(1); j++)
@@ -228,22 +228,22 @@
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Welcome to the game “Minesweeper”. Try to reveal all cells without mines. " +
-                              "Use 'top' to view the scoreboard, 'restart' to start a new game and 'exit' " + 
-                              "to quit the game.");
+                               "Use 'top' to view the scoreboard, 'restart' to start a new game and 'exit' " +
+                               "to quit the game.");
             Console.WriteLine();
 
             PrintMatrix(playerMatrix);
 
-            while (gameInProgress)
-                //abe typo izglejda ama ako napravq metod shte zaema mn mqsto
-                //kakvo pravq? -cheta dokat moga
-            {
-                procheti();
-            }
+            //while (gameInProgress)
+            ////abe typo izglejda ama ako napravq metod shte zaema mn mqsto
+            ////kakvo pravq? -cheta dokat moga
+            //{
+            //    read();
+            //}
         }
         static void Top()
         {
-            DaiRezultati(topListNames, topListCellsOpened);
+            //GiveScoreBoard(topListNames, topListCellsOpened);
         }
         static void DoMove(int row, int col)
         {//tuka sme na pyt da se premestim
@@ -255,13 +255,13 @@
                 return;
             }
 
-            if (matrica[row, col] == '*')
+            if (matrix[row, col] == '*')
             {
-                for (int i = 0; i < matrica.GetLength(0); i++)
+                for (int i = 0; i < matrix.GetLength(0); i++)
                 {
-                    for (int j = 0; j < matrica.GetLength(1); j++)
+                    for (int j = 0; j < matrix.GetLength(1); j++)
                     {
-                        if (matrica[i, j] == '*')
+                        if (matrix[i, j] == '*')
                         {
                             playerMatrix[i, j] = '*';
                             continue;
@@ -291,7 +291,7 @@
                     if (cellsOpened >= topListCellsOpened[i])
                     {
                         topListCellsOpened.Insert(i, cellsOpened);
-                       
+
                         Console.Write("Please enter your name for the top scoreboard: ");
                         string igrach = Console.ReadLine();
                         topListNames.Insert(i, igrach);
@@ -315,14 +315,14 @@
 
                 playerAddedToScoreboard = false;
                 DaiRezultati(topListNames, topListCellsOpened);
-                NovaIgra();
+                newGame();
             }
             else
             {
                 cellsOpened++;
                 if (cellsOpened == 35)
                 {
-                    PrintMatrix(matrica);
+                    PrintMatrix(matrix);
                     Console.WriteLine("Congratulations! You revealed all cells without mines!");
                     gameInProgress = false;
                     Console.Write("Please enter your name for the top scoreboard: ");
@@ -336,10 +336,10 @@
                         topListNames.RemoveAt(5);
                     }
                     DaiRezultati(topListNames, topListCellsOpened);
-                    NovaIgra();
+                    newGame();
                     return;
                 }
-                playerMatrix[row, col] = matrica[row, col];
+                playerMatrix[row, col] = matrix[row, col];
                 PrintMatrix(playerMatrix);
             }
         }
