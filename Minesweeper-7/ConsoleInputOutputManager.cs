@@ -36,25 +36,27 @@
                 throw new ArgumentNullException("Game field is null!");
             }
 
-            char[,] fieldMatrix = gameField.field;
+            Console.WriteLine(gameField.ToString());
 
-            Console.WriteLine();
-            Console.WriteLine("     0 1 2 3 4 5 6 7 8 9");
-            Console.WriteLine("   ---------------------");
+            //char[,] fieldMatrix = gameField.field;
 
-            for (int row = 0; row < gameField.Rows; row++)
-            {
-                Console.Write("{0} | ", row);
-                for (int col = 0; col < gameField.Columns; col++)
-                {
-                    char currentSymbol = fieldMatrix[row, col];
-                    PrintCurrentSymbol(currentSymbol, hasBoomed);
-                }
+            //Console.WriteLine();
+            //Console.WriteLine("     0 1 2 3 4 5 6 7 8 9");
+            //Console.WriteLine("   ---------------------");
 
-                Console.WriteLine("|");
-            }
+            //for (int row = 0; row < gameField.Rows; row++)
+            //{
+            //    Console.Write("{0} | ", row);
+            //    for (int col = 0; col < gameField.Columns; col++)
+            //    {
+            //        char currentSymbol = fieldMatrix[row, col];
+            //        PrintCurrentSymbol(currentSymbol, hasBoomed);
+            //    }
 
-            Console.WriteLine("   ---------------------");
+            //    Console.WriteLine("|");
+            //}
+
+            //Console.WriteLine("   ---------------------");
         }
 
         /// <summary>

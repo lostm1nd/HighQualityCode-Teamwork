@@ -14,9 +14,12 @@
             FieldFactory minesweeperFactory = new MinesweeperField();
             IField minesweeperField = minesweeperFactory.CreateField();
 
-           // Console.WriteLine(minesweeperField.ToString());
+            FieldFactory playingFieldFactory = new PlayingField();
+            IField playingField = playingFieldFactory.CreateField();
 
-            IEngine engine = new Engine(minesweeperField);
+            //Console.WriteLine(minesweeperField.ToString());
+
+            IEngine engine = new Engine(minesweeperField, playingField);
             engine.Play();
         }
     }

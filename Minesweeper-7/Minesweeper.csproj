@@ -46,10 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CellRepresentor.cs" />
     <Compile Include="ConsoleInputOutputManager.cs" />
     <Compile Include="Contracts\IAdjacencyMap.cs" />
     <Compile Include="Contracts\IPrint.cs" />
     <Compile Include="Contracts\IReadInput.cs" />
+    <Compile Include="GeneralFieldPopulator.cs" />
     <Compile Include="MinesweeperAdjacencyMap.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="Field.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="MineGenerator.cs" />
     <Compile Include="Minesweeper.cs" />
     <Compile Include="MinesweeperField.cs" />
+    <Compile Include="PlayingField.cs" />
     <Compile Include="RandomNumber.cs" />
     <Compile Include="ScoreBoard.cs" />
     <Compile Include="Telerik.cs" />

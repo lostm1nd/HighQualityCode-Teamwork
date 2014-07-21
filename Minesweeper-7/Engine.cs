@@ -20,12 +20,12 @@
         private string currentUserName;
         private int currentRow;
         private int currentCol;
-        public Engine(IField field)
+        public Engine(IField mineField, IField playingField)
         {
             this.renderer = new ConsoleInputOutputManager();
             this.scoreBoard = new ScoreBoard();
-            this.emptyField = new Field(5, 10);
-            this.field = field;
+            this.emptyField = playingField;
+            this.field = mineField;
             this.playing = true;
             this.currentUserName = "Player";
             this.currentUserScore = 0;
