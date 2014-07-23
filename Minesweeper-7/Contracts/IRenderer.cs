@@ -46,5 +46,9 @@
         /// </summary>
         void RenderQuitMessage();
 
+        /// <summary>
+        /// Renders all posible command when the game ends 
+        /// </summary>
+        void RenderCommandsMessage();
     }
 }
