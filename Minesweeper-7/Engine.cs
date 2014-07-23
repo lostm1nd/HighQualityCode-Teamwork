@@ -9,37 +9,46 @@
     /// </summary>
     public class Engine: IEngine
     {
-        private IInputOutputManager renderer;
-        private IScoreBoard scoreBoard;
-        private IField field;
-        private IField emptyField;
+        private readonly IRenderer renderer;
+        private readonly IReadInput inputReader;
+        private readonly IScoreBoard scoreBoard;
+        private IField mineField;
+        private IField playingField;
+
         private bool playing;
+
+        private string currentUserName;
         private string currentUserInput;
+
         private int currentUserScore;
         private int openedCells;
-        private string currentUserName;
         private int currentRow;
         private int currentCol;
-        public Engine(IField mineField, IField playingField)
+
+        public Engine(IField mineField, IField playingField, IRenderer renderer, IReadInput inputReader)
         {
-            this.renderer = new ConsoleInputOutputManager();
+            this.renderer = renderer;
+            this.inputReader = inputReader;
             this.scoreBoard = new ScoreBoard();
-            this.emptyField = playingField;
-            this.field = mineField;
+
+            this.playingField = playingField;
+            this.mineField = mineField;
+
             this.playing = true;
             this.currentUserName = "Player";
             this.currentUserScore = 0;
             this.openedCells = 0;
         }
+
         public void Play()
         {
             //TODO: Implement the main playing logic of the game.
-            renderer.PrintInitialMessage();
-            renderer.PrintGameField(this.emptyField, false);
+            this.renderer.RenderInitialMessage();
+            this.renderer.RenderGameField(this.playingField, false);
 
             while (playing)
             {
-                currentUserInput = renderer.GetUserInput();
+                currentUserInput = this.inputReader.GetUserInput();
                 CheckCurrentCommand(currentUserInput);
             }
             
@@ -55,7 +64,7 @@
                  currentRow = int.Parse(clearedCommand[0].ToString());
                  currentCol = int.Parse(clearedCommand[1].ToString());
 
-                if (this.field[currentRow, currentCol] == '*')
+                if (this.mineField[currentRow, currentCol] == '*')
                 {
                     EndGame();
                 }
@@ -69,7 +78,7 @@
                 switch (clearedCommand)
                 {
                     case "exit": 
-                        this.renderer.PrintQuitMessage();
+                        this.renderer.RenderQuitMessage();
                         Environment.Exit(1); break;
                     case "restart": 
                         RestartGame(); break;
@@ -79,32 +88,31 @@
                         break;
                 }
             }
-            
         }
 
         private void EndGame()
         {
-            this.emptyField[currentRow, currentCol] = this.field[currentRow, currentCol];
-            this.renderer.PrintGameField(this.emptyField, true);
+            this.playingField[currentRow, currentCol] = this.mineField[currentRow, currentCol];
+            this.renderer.RenderGameField(this.playingField, true);
             this.playing = false;
-            this.renderer.PrintExplosionMessage(this.openedCells);
-            this.currentUserName = this.renderer.GetUserNickname();
+            this.renderer.RenderExplosionMessage(this.openedCells);
+            this.currentUserName = this.inputReader.GetUserNickname();
             this.scoreBoard.AddPlayer(this.currentUserName, this.currentUserScore);
         }
 
         private void OpenNewCell()
         {
-            this.emptyField[currentRow, currentCol] = this.field[currentRow, currentCol];
-            currentUserScore += int.Parse(this.field[currentRow, currentCol].ToString());
+            this.playingField[currentRow, currentCol] = this.mineField[currentRow, currentCol];
+            currentUserScore += int.Parse(this.mineField[currentRow, currentCol].ToString());
             openedCells++;
-            this.renderer.PrintGameField(this.emptyField, false);
+            this.renderer.RenderGameField(this.playingField, false);
         }
 
         private void RestartGame()
         {
             FieldFactory istanceOfFactory = new MinesweeperField();
-            this.field = istanceOfFactory.CreateField();
-            this.emptyField = new Field(5, 10);
+            this.mineField = istanceOfFactory.CreateField();
+            this.playingField = new Field(5, 10);
             this.playing = true;
             Play();
         }

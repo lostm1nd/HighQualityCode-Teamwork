@@ -9,7 +9,5 @@
         char this[int row, int col] { get; set; }
 
         string ToString();
-
-        char[,] field { get; set; }
     }
 }

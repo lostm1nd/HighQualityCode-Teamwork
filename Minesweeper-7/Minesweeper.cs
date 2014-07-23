@@ -17,9 +17,12 @@
             FieldFactory playingFieldFactory = new PlayingField();
             IField playingField = playingFieldFactory.CreateField();
 
+            IRenderer consoleRenderer = new ConsoleRenderer();
+            IReadInput inputReader = new ConsoleReader();
+
             //Console.WriteLine(minesweeperField.ToString());
 
-            IEngine engine = new Engine(minesweeperField, playingField);
+            IEngine engine = new Engine(minesweeperField, playingField, consoleRenderer, inputReader);
             engine.Play();
         }
     }
