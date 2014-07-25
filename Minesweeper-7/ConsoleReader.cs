@@ -30,9 +30,12 @@
             input = input.Trim();
             if (input.Length < 2)
             {
-                throw new ArgumentException("Enter two numbers - one for row, one for col");
+                Console.WriteLine("Enter two numbers - one for row, one for column !");
             }
-
+            else if (input.Length > 2)
+            {
+                Console.WriteLine("Numbers should be two - one for row and one for column !");
+            }
             return input;
         }
     }

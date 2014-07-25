@@ -88,6 +88,7 @@
         {
             string commands = "Use 'top' to view the scoreboard, 'restart' to start a new game and 'exit' to quit  the game.";
             Console.WriteLine(commands);
+
         }
     }
 }
