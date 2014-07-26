@@ -17,7 +17,7 @@
         {
             ValidateAndInitializeField(rows, columns);
         }
-
+        
         /// <summary>
         /// Get the row count of the minefield
         /// </summary>
@@ -40,6 +40,7 @@
         /// <param name="row">The number of the rows</param>
         /// <param name="col">The number of the columns</param>
         /// <returns>The character that is in the specified cell</returns>
+
         public char this[int row, int col]
         {
             get
@@ -84,14 +85,16 @@
         {
             if (row < 0 || row >= this.Rows)
             {
-                throw new IndexOutOfRangeException("No such row. Rows are in range [0, " + this.Rows + ")");
+                Console.WriteLine("No such row ");
             }
 
             if (col < 0 || col >= this.Columns)
             {
-                throw new IndexOutOfRangeException("No such column. Columns are in range [0, " + this.Columns + ")");
+                Console.WriteLine("No such column.");
             }
+            
         }
+       
 
         private void ValidateAndInitializeField(int rows, int cols)
         {
@@ -121,13 +124,13 @@
             this.GenerateMines();
             this.GenerateNeighbouringMinesCount();
         }
-        
+
         private void GenerateMines()
         {
             int rowCount = this.field.GetLength(0);
             int colCount = this.field.GetLength(1);
 
-            int minesToGenerateCount =  rowCount + colCount;
+            int minesToGenerateCount = rowCount + colCount;
 
             Random rnd = new Random();
 

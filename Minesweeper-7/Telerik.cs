@@ -293,8 +293,8 @@
                         topListCellsOpened.Insert(i, cellsOpened);
 
                         Console.Write("Please enter your name for the top scoreboard: ");
-                        string igrach = Console.ReadLine();
-                        topListNames.Insert(i, igrach);
+                        string player = Console.ReadLine();
+                        topListNames.Insert(i, player);
                         if (emptyScoreboard || topListCellsOpened.Count == 6)
                         {
                             topListCellsOpened.RemoveAt(topListCellsOpened.Count - 1);
