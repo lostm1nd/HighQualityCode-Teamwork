@@ -4,7 +4,7 @@
 
     public static class RandomNumber
     {
-        static Random generator = new Random();
+        static readonly Random generator = new Random();
         
         public static int Get(int maxNumber)
         {

@@ -6,7 +6,7 @@
 
     public class Field : IField
     {
-        private char[,] field {get;set;}
+        private char[,] field;
 
         /// <summary>
         /// Create a minefield with a specific size.
@@ -17,9 +17,6 @@
         {
             ValidateAndInitializeField(rows, columns);
         }
-               
-
-        
 
         /// <summary>
         /// Get the row count of the minefield
@@ -43,7 +40,6 @@
         /// <param name="row">The number of the rows</param>
         /// <param name="col">The number of the columns</param>
         /// <returns>The character that is in the specified cell</returns>
-
         public char this[int row, int col]
         {
             get
@@ -61,9 +57,12 @@
             }
         }
 
+        /// <summary>
+        /// String representation of the field
+        /// </summary>
+        /// <returns>The field as a string</returns>
         public override string ToString()
         {
-
             StringBuilder stringifyField = new StringBuilder();
 
             Console.WriteLine();
@@ -100,7 +99,6 @@
             }
             
         }
-       
 
         private void ValidateAndInitializeField(int rows, int cols)
         {
@@ -116,88 +114,5 @@
 
             this.field = new char[rows, cols];
         }
-
-        // These methods should be in separate classes.
-        // May use some creational pattern to build
-        // the field and populate it with mines.
-        #region Methods that need to be extracted
-        /// <summary>
-        /// Generate mines on the current field and fill the number
-        /// of neighbouring mines.
-        /// </summary>
-        public void GenerateMinefield()
-        {
-            this.GenerateMines();
-            this.GenerateNeighbouringMinesCount();
-        }
-
-        private void GenerateMines()
-        {
-            int rowCount = this.field.GetLength(0);
-            int colCount = this.field.GetLength(1);
-
-            int minesToGenerateCount = rowCount + colCount;
-
-            Random rnd = new Random();
-
-            while (minesToGenerateCount > 0)
-            {
-                int rowToMine = rnd.Next(rowCount);
-                int colToMine = rnd.Next(colCount);
-
-                if (this.field[rowToMine, colToMine] != '*')
-                {
-                    this.field[rowToMine, colToMine] = '*';
-                    minesToGenerateCount--;
-                }
-            }
-        }
-
-        private void GenerateNeighbouringMinesCount()
-        {
-            for (int row = 0; row < this.field.GetLength(0); row++)
-            {
-                for (int col = 0; col < this.field.GetLength(1); col++)
-                {
-                    if (this.field[row, col] == '*')
-                    {
-                        continue;
-                    }
-
-                    string neighbourMinesCountAsString = this.CalculateNeighbouringMinesCount(row, col).ToString();
-                    this.field[row, col] = Convert.ToChar(neighbourMinesCountAsString);
-                }
-            }
-        }
-
-        private int CalculateNeighbouringMinesCount(int row, int col)
-        {
-            int[] rowPositions = { -1, -1, -1, 0, 1, 1, 1, 0 };
-            int[] colPositions = { -1, 0, 1, 1, 1, 0, -1, -1 };
-
-            int neighbouringMinesCount = 0;
-            int currentNeighbourRow = 0;
-            int currentNeighbourCol = 0;
-
-            for (int position = 0; position < 8; position++)
-            {
-                currentNeighbourRow = row + rowPositions[position];
-                currentNeighbourCol = col + colPositions[position];
-
-                if (currentNeighbourRow < 0 || currentNeighbourRow >= this.field.GetLength(0) ||
-                    currentNeighbourCol < 0 || currentNeighbourCol >= this.field.GetLength(1))
-                {
-                    continue;
-                }
-
-                if (this.field[currentNeighbourRow, currentNeighbourCol] == '*')
-                {
-                    neighbouringMinesCount++;
-                }
-            }
-
-            return neighbouringMinesCount;
-        }
-        #endregion
     }
 }

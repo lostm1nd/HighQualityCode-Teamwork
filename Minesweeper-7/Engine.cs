@@ -9,11 +9,11 @@
     /// </summary>
     public class Engine: IEngine
     {
+        private IField mineField;
+        private IField playingField;
         private readonly IRenderer renderer;
         private readonly IReadInput inputReader;
         private readonly IScoreBoard scoreBoard;
-        private IField mineField;
-        private IField playingField;
 
         private bool playing;
 
@@ -26,18 +26,19 @@
         /// <summary>
         /// Represents Engine class constructor.
         /// </summary>
-        /// <param name="mineField">Must contain a class that inherit IField interface</param>
-        /// <param name="playingField">Must contain a class that inherit IField interface</param>
-        /// <param name="renderer">Must contain a class that inherit IRenderer interface</param>
-        /// <param name="inputReader">Must contain a class that inherit IReadInput interface</param>
-        public Engine(IField mineField, IField playingField, IRenderer renderer, IReadInput inputReader)
+        /// <param name="mineField">Must contain a class that inherits IField interface</param>
+        /// <param name="playingField">Must contain a class that inherits IField interface</param>
+        /// <param name="renderer">Must contain a class that inherits IRenderer interface</param>
+        /// <param name="inputReader">Must contain a class that inherits IReadInput interface</param>
+        /// <param name="scoreboard">Must contain a class that inherits IScoreBoard interface</param>
+        public Engine(IField mineField, IField playingField, IRenderer renderer, IReadInput inputReader, IScoreBoard scoreboard)
         {
-            this.renderer = renderer;
-            this.inputReader = inputReader;
-            this.scoreBoard = new ScoreBoard();
-
             this.playingField = playingField;
             this.mineField = mineField;
+
+            this.renderer = renderer;
+            this.inputReader = inputReader;
+            this.scoreBoard = scoreboard;
 
             this.playing = true;
             this.currentUserName = "Player";
@@ -136,9 +137,9 @@
         /// </summary>
         private void RestartGame()
         {
-            FieldFactory istanceOfMineFieldFactory = new MinesweeperField();
+            FieldFactory istanceOfMineFieldFactory = new MinesweeperFieldFactory();
             this.mineField = istanceOfMineFieldFactory.CreateField();
-            FieldFactory instanceOfPlayingFieldFactory = new PlayingField();
+            FieldFactory instanceOfPlayingFieldFactory = new PlayingFieldFactory();
             this.playingField = instanceOfPlayingFieldFactory.CreateField();
             this.playing = true;
             Play();

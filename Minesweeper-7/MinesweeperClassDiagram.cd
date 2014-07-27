@@ -1,123 +1,175 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Minesweeper.ConsoleInputOutputManager" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Minesweeper.CellRepresentor" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gQAAAAAAAAAgAIAAAAQAAAAAAIAAAAQBAAAQAAAAAAA=</HashCode>
-      <FileName>ConsoleInputOutputManager.cs</FileName>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>CellRepresentor.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Minesweeper.ConsoleMinesweeper">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConsoleMinesweeper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Minesweeper.ConsoleReader" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>ConsoleReader.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Minesweeper.ConsoleRenderer" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAgAAAAAAAAAAAAAAEAACAIAAAAAgAAgAABAAAA=</HashCode>
+      <FileName>ConsoleRenderer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Minesweeper.Engine" BaseTypeListCollapsed="true">
-    <Position X="9.75" Y="0.5" Width="1.5" />
+    <Position X="8.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAAAAAAgAAAAgAAIAAAAAAAAAAgAAAAAAAgCA=</HashCode>
+      <HashCode>AAAAAEACAAAAAgAAAAgQIIEIAAACAAAAgAAAAAAQgCA=</HashCode>
       <FileName>Engine.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Minesweeper.Field" BaseTypeListCollapsed="true">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Position X="1.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACQAEAAAABAAEAECAAAAAAAAAAAAAAQAAAQAAgAABA=</HashCode>
+      <HashCode>AACAAEAAAAAAAEAECAAAAAAAAAAAAAAAAAAQAAgAAAA=</HashCode>
       <FileName>Field.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Minesweeper.FieldFactory">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FieldFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Minesweeper.GeneralFieldPopulator" BaseTypeListCollapsed="true">
+    <Position X="5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>GeneralFieldPopulator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Minesweeper.Mine" BaseTypeListCollapsed="true">
-    <Position X="5.75" Y="0.5" Width="1.5" />
+    <Position X="3.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>Mine.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Minesweeper.MineGenerator" BaseTypeListCollapsed="true">
-    <Position X="4" Y="0.5" Width="1.5" />
+    <Position X="5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
       <FileName>MineGenerator.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Minesweeper.Minesweeper">
-    <Position X="8" Y="0.5" Width="1.5" />
+  <Class Name="Minesweeper.MinesweeperAdjacencyMap" BaseTypeListCollapsed="true">
+    <Position X="6.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Minesweeper.cs</FileName>
+      <HashCode>AACAAAAAAQAAAAAAAAQAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>MinesweeperAdjacencyMap.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Minesweeper.MinesweeperFieldFactory">
+    <Position X="1.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAgAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>MinesweeperFieldFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Minesweeper.RandomNumber">
-    <Position X="4" Y="2.25" Width="1.5" />
+  <Class Name="Minesweeper.PlayingFieldFactory">
+    <Position X="3.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAgAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>PlayingFieldFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Minesweeper.RandomNumber" Collapsed="true">
+    <Position X="6" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAABAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>RandomNumber.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Minesweeper.ScoreBoard" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="3.25" Width="1.5" />
+    <Position X="14.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAQAAgAAEAAAAA=</HashCode>
       <FileName>ScoreBoard.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Minesweeper.Telerik" Collapsed="true">
-    <Position X="9.75" Y="1.5" Width="1.5" />
+  <Interface Name="Minesweeper.Contracts.IAdjacencyMap">
+    <Position X="6.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAABAIAAAACAAABGAAAQAAAAQAAYAAAAJAAAABICQAA=</HashCode>
-      <FileName>Telerik.cs</FileName>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IAdjacencyMap.cs</FileName>
     </TypeIdentifier>
-  </Class>
+  </Interface>
   <Interface Name="Minesweeper.Contracts.IEngine">
-    <Position X="3.75" Y="4.25" Width="1.5" />
+    <Position X="8.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
       <FileName>Contracts\IEngine.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Minesweeper.Contracts.IField">
-    <Position X="7.25" Y="4.25" Width="1.5" />
+    <Position X="1.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAEAECAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
       <FileName>Contracts\IField.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Minesweeper.Contracts.IGeneratable">
-    <Position X="5.5" Y="5.5" Width="1.5" />
+    <Position X="3.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>Contracts\IGeneratable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Minesweeper.Contracts.IGenerator">
-    <Position X="5.5" Y="4.25" Width="1.5" />
+    <Position X="5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
       <FileName>Contracts\IGenerator.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Minesweeper.Contracts.IPrint">
-    <Position X="9" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAIAAAAQAAAAAAIAAAAQBAAAQAAAAAAA=</HashCode>
-      <FileName>Contracts\IPrint.cs</FileName>
-      <NewMemberFileName>Contracts\IInputOutputManager.cs</NewMemberFileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="Minesweeper.Contracts.IScoreBoard">
-    <Position X="10.75" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAEAAAAA=</HashCode>
-      <FileName>Contracts\IScoreBoard.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="Minesweeper.Contracts.IReadInput" Collapsed="true">
-    <Position X="8.75" Y="6.5" Width="1.5" />
+  <Interface Name="Minesweeper.Contracts.IReadInput">
+    <Position X="12.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>Contracts\IReadInput.cs</FileName>
       <NewMemberFileName>Contracts\IInputOutputManager.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Minesweeper.Contracts.IRenderer">
+    <Position X="10.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAgAAAAAAAAAAAAAAEAACAIAAAAAgAAgAABAAAA=</HashCode>
+      <FileName>Contracts\IRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Minesweeper.Contracts.IScoreBoard">
+    <Position X="14.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAEAAAAA=</HashCode>
+      <FileName>Contracts\IScoreBoard.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Tahoma" Size="8.25" />

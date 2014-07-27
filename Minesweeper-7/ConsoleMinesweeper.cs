@@ -7,22 +7,21 @@
     /// <summary>
     /// Represents the main application from which will start the game.
     /// </summary>
-    public class Minesweeper
+    public class ConsoleMinesweeper
     {
-        internal static void Main()
+        public void Start()
         {
-            FieldFactory minesweeperFactory = new MinesweeperField();
+            FieldFactory minesweeperFactory = new MinesweeperFieldFactory();
             IField minesweeperField = minesweeperFactory.CreateField();
 
-            FieldFactory playingFieldFactory = new PlayingField();
+            FieldFactory playingFieldFactory = new PlayingFieldFactory();
             IField playingField = playingFieldFactory.CreateField();
 
             IRenderer consoleRenderer = new ConsoleRenderer();
             IReadInput inputReader = new ConsoleReader();
+            IScoreBoard scoreboard = new ScoreBoard();
 
-            //Console.WriteLine(minesweeperField.ToString());
-
-            IEngine engine = new Engine(minesweeperField, playingField, consoleRenderer, inputReader);
+            IEngine engine = new Engine(minesweeperField, playingField, consoleRenderer, inputReader, scoreboard);
             engine.Play();
         }
     }

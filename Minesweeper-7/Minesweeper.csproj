@@ -49,7 +49,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CellRepresentor.cs" />
-    <Compile Include="ConsoleInputOutputManager.cs" />
     <Compile Include="ConsoleReader.cs" />
     <Compile Include="ConsoleRenderer.cs" />
     <Compile Include="Contracts\IAdjacencyMap.cs" />
@@ -63,17 +62,16 @@
     <Compile Include="Contracts\IField.cs" />
     <Compile Include="Contracts\IGeneratable.cs" />
     <Compile Include="Contracts\IGenerator.cs" />
-    <Compile Include="Contracts\IInputOutputManager.cs" />
     <Compile Include="Contracts\IScoreBoard.cs" />
     <Compile Include="FieldFactory.cs" />
     <Compile Include="Mine.cs" />
     <Compile Include="MineGenerator.cs" />
-    <Compile Include="Minesweeper.cs" />
-    <Compile Include="MinesweeperField.cs" />
-    <Compile Include="PlayingField.cs" />
+    <Compile Include="ConsoleMinesweeper.cs" />
+    <Compile Include="MinesweeperFieldFactory.cs" />
+    <Compile Include="PlayingFieldFactory.cs" />
     <Compile Include="RandomNumber.cs" />
     <Compile Include="ScoreBoard.cs" />
-    <Compile Include="Telerik.cs" />
+    <Compile Include="StartGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
