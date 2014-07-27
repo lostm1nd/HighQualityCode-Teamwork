@@ -6,7 +6,7 @@
 
     public class Field : IField
     {
-        private char[,] field;
+        private char[,] field {get;set;}
 
         /// <summary>
         /// Create a minefield with a specific size.
@@ -17,7 +17,10 @@
         {
             ValidateAndInitializeField(rows, columns);
         }
+               
+
         
+
         /// <summary>
         /// Get the row count of the minefield
         /// </summary>
@@ -63,6 +66,9 @@
 
             StringBuilder stringifyField = new StringBuilder();
 
+            Console.WriteLine();
+            Console.WriteLine();
+            
             stringifyField.AppendLine("    0 1 2 3 4 5 6 7 8 9");
             stringifyField.AppendLine("   ----------------------");
 

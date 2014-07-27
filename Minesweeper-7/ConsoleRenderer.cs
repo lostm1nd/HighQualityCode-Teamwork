@@ -13,9 +13,10 @@
         /// </summary>
         public void RenderInitialMessage()
         {
-            string welcomeMessage = @"Welcome to the game “Minesweeper”. Try to reveal all cells without mines.";
-            string commands = "Use 'top' to view the scoreboard, 'restart' to start a new game and 'exit' to quit  the game.";
-
+            string welcomeMessage = @"   Welcome to the game “Minesweeper”. Try to reveal all cells without mines.";
+            string commands = @"   Use 'top' to view the scoreboard, 'restart' to start a new game and 'exit'      to quit  the game.";
+            Console.WriteLine();
+            
             Console.WriteLine(welcomeMessage + Environment.NewLine + commands);
         }
 
@@ -86,8 +87,9 @@
 
         public void RenderCommandsMessage()
         {
-            string commands = "Use 'top' to view the scoreboard, 'restart' to start a new game and 'exit' to quit  the game.";
+            string commands = "Use 'top' to view the scoreboard, 'restart' to start a new game and 'exit' to quit  the game. ";
             Console.WriteLine(commands);
+             
 
         }
     }

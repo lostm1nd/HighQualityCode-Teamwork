@@ -228,8 +228,7 @@
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Welcome to the game “Minesweeper”. Try to reveal all cells without mines. " +
-                               "Use 'top' to view the scoreboard, 'restart' to start a new game and 'exit' " +
-                               "to quit the game.");
+                               "Use 'top' to view the scoreboard, 'restart' to start a new game and 'exit' to quit  the game. ");
             Console.WriteLine();
 
             PrintMatrix(playerMatrix);
