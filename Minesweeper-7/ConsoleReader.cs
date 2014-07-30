@@ -30,11 +30,11 @@
             input = input.Trim();
             if (input.Length < 2)
             {
-                Console.WriteLine("Enter two numbers - one for row, one for column !");
+                Console.WriteLine("Numbers should be two - one for row and one for column.");
             }
             else if (input.Length > 2)
             {
-                Console.WriteLine("Numbers should be two - one for row and one for column !");
+                Console.WriteLine("Numbers should be two - one for row and one for column.");
             }
             return input;
         }

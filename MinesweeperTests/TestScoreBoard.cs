@@ -13,7 +13,8 @@
             string playerName = "Pesho";
             int playerScore = 7;
             int currentPlayer = 1;
-            string output = "\n\rScoreboard:\n\r" + currentPlayer + ". " + playerName + " --> " + playerScore + " cells" + Environment.NewLine;
+            string output = Environment.NewLine + "Scoreboard:" + Environment.NewLine +
+                currentPlayer + ". " + playerName + " --> " + playerScore + " cells" + Environment.NewLine;
 
             ScoreBoard scoreBoard = new ScoreBoard();
             scoreBoard.AddPlayer(playerName, playerScore);
@@ -68,13 +69,18 @@
         public void TestGenerateScoreBoard()
         {
             ScoreBoard scoreBoard = new ScoreBoard();
-            int currentPlayer = 1;
-            string playerName = "Sasho";
-            int playerScore = 10;
+            scoreBoard.AddPlayer("Sasho", 10);
+            scoreBoard.AddPlayer("Pesho", 7);
+            scoreBoard.AddPlayer("Tosho", 7);
+            scoreBoard.AddPlayer("Gosho", 3);
 
-            string output = "\n\rScoreboard:\n\r" + currentPlayer + ". Sasho --> " + playerScore + " cells" + Environment.NewLine;
+            string output = Environment.NewLine +
+                "Scoreboard:" + Environment.NewLine +
+                "1. Sasho --> 10 cells" + Environment.NewLine + 
+                "2. Pesho --> 7 cells" + Environment.NewLine +
+                "3. Tosho --> 7 cells" + Environment.NewLine +
+                "4. Gosho --> 3 cells" + Environment.NewLine;
 
-            scoreBoard.AddPlayer(playerName, playerScore);
             Assert.AreEqual(output, scoreBoard.Generate());
         }
     }

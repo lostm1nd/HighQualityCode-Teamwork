@@ -72,10 +72,11 @@
             else
             {
                 StringBuilder scoreBoard = new StringBuilder();
-                scoreBoard.Append("\n\rScoreboard:");
+                scoreBoard.AppendLine();
+                scoreBoard.AppendLine("Scoreboard:");
 
                 int currentPlayer = 1;
-                var orderedScoreDescending = this.scoreBoard.Keys.OrderByDescending(obj => obj.ToString());
+                var orderedScoreDescending = this.scoreBoard.Keys.OrderByDescending(score => score);
 
                 foreach (var key in orderedScoreDescending)
                 {
@@ -83,13 +84,11 @@
                     {
                         if (currentPlayer <= MaxShowedPlayersCount)
                         {
-                            scoreBoard.Append(string.Format("\n\r{0}. {1} --> {2} cells", currentPlayer, person, key));
+                            scoreBoard.AppendLine(string.Format("{0}. {1} --> {2} cells", currentPlayer, person, key));
                             currentPlayer++;
                         }
                     }
                 }
-
-                scoreBoard.AppendLine();
 
                 return scoreBoard.ToString();
             }
