@@ -7,7 +7,7 @@
     using Minesweeper.Contracts;
 
     [TestClass]
-    public class TestGeneralFieldPopulator
+    public class TestMineGenerator
     {
         private const int Rows = 10;
         private const int Columns = 10;
@@ -20,12 +20,12 @@
         public void InitializeMineFieldTests()
         {
             this.field = new Field(Rows, Columns);
-            this.generator = new GeneralFieldPopulator(this.field);
-            this.item = new CellRepresentor('#');
+            this.generator = new MineGenerator(this.field);
+            this.item = new Mine('$');
         }
 
         [TestMethod]
-        public void TestIfTheGeneratorPopulatesTheEntireField()
+        public void TestIfTheMineGeneratorPopulatesTheEntireField()
         {
             this.generator.Generate(this.item, Rows * Columns);
 
@@ -48,11 +48,11 @@
                 }
             }
 
-            Assert.IsTrue(isFieldPopulatedEntirely, "The field must be populated with " + (Rows * Columns) + " items.");
+            Assert.IsTrue(isFieldPopulatedEntirely, "The mine field must be populated with " + (Rows * Columns) + " items.");
         }
 
         [TestMethod]
-        public void TestIfTheGeneratorPopulatesHalfOfTheField()
+        public void TestIfTheMineGeneratorPopulatesHalfOfTheField()
         {
             this.generator.Generate(this.item, (Rows * Columns) / 2);
 

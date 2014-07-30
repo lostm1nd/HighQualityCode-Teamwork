@@ -56,9 +56,10 @@
     <Compile Include="TestConsoleRenderer.cs" />
     <Compile Include="TestField.cs" />
     <Compile Include="TestGeneralFieldPopulator.cs" />
+    <Compile Include="TestMineField.cs" />
+    <Compile Include="TestMineGenerator.cs" />
     <Compile Include="TestPlayingField.cs" />
     <Compile Include="TestScoreBoard.cs" />
-    <Compile Include="TestMineField.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Minesweeper-7\Minesweeper.csproj">

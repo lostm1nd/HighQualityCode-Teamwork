@@ -7,13 +7,14 @@
     /// <summary>
     /// Represents the engine that executes the main logic of the game. 
     /// </summary>
-    public class Engine: IEngine
+    public class Engine : IEngine
     {
-        private IField mineField;
-        private IField playingField;
         private readonly IRenderer renderer;
         private readonly IReadInput inputReader;
         private readonly IScoreBoard scoreBoard;
+
+        private IField mineField;
+        private IField playingField;
 
         private bool playing;
 
@@ -24,7 +25,7 @@
         private int openedCells;
 
         /// <summary>
-        /// Represents Engine class constructor.
+        /// Initializes a new instance of the <see cref="Engine"/> class.
         /// </summary>
         /// <param name="mineField">Must contain a class that inherits IField interface</param>
         /// <param name="playingField">Must contain a class that inherits IField interface</param>
@@ -52,14 +53,13 @@
         public void Play()
         {
             this.renderer.RenderInitialMessage();
-            this.renderer.RenderGameField(this.playingField, false);
+            this.renderer.RenderGameField(this.playingField);
 
             while (playing)
             {
-                currentUserInput = this.inputReader.GetUserInput();
-                CheckCurrentCommand(currentUserInput);
+                this.currentUserInput = this.inputReader.GetUserInput();
+                this.CheckCurrentCommand(currentUserInput);
             }
-            
         }
 
         /// <summary>
@@ -77,11 +77,11 @@
 
                 if (this.mineField[currentRow, currentCol] == '*')
                 {
-                    EndGame(currentRow, currentCol);
+                    this.EndGame(currentRow, currentCol);
                 }
                 else
                 {
-                    OpenNewCell(currentRow, currentCol);
+                    this.OpenNewCell(currentRow, currentCol);
                 }           
             }
             else
@@ -90,11 +90,14 @@
                 {
                     case "exit": 
                         this.renderer.RenderQuitMessage();
-                        Environment.Exit(1); break;
+                        Environment.Exit(1);
+                        break;
                     case "restart": 
-                        RestartGame(); break;
+                        this.RestartGame();
+                        break;
                     case "top":
-                        this.renderer.RenderScoreBoard(this.scoreBoard); break;
+                        this.renderer.RenderScoreBoard(this.scoreBoard);
+                        break;
                     default:
                         break;
                 }
@@ -109,14 +112,14 @@
         private void EndGame(int row, int col)
         {
             this.playingField[row, col] = this.mineField[row, col];
-            this.renderer.RenderGameField(this.playingField, true);
+            this.renderer.RenderGameField(this.playingField);
             this.playing = false;
             this.renderer.RenderExplosionMessage(this.openedCells);
             this.currentUserName = this.inputReader.GetUserNickname();
             this.scoreBoard.AddPlayer(this.currentUserName, this.currentUserScore);
             this.renderer.RenderCommandsMessage();
-            currentUserInput = this.inputReader.GetUserInput();
-            CheckCurrentCommand(currentUserInput);
+            this.currentUserInput = this.inputReader.GetUserInput();
+            this.CheckCurrentCommand(currentUserInput);
         }
 
         /// <summary>
@@ -127,9 +130,11 @@
         private void OpenNewCell(int row, int col)
         {
             this.playingField[row, col] = this.mineField[row, col];
-            currentUserScore += int.Parse(this.mineField[row, col].ToString());
+            this.currentUserScore += int.Parse(this.mineField[row, col].ToString());
+
             openedCells++;
-            this.renderer.RenderGameField(this.playingField, false);
+
+            this.renderer.RenderGameField(this.playingField);
         }
 
         /// <summary>
@@ -146,4 +151,3 @@
         }
     }
 }
-

@@ -8,7 +8,7 @@
         private readonly IField field;
 
         /// <summary>
-        /// Given a field the GeneralFieldPopulator populates the entire field with IGeneratable items
+        /// Initilizes a new instance of the <see cref="GeneralFieldPopulator"/> class.
         /// </summary>
         /// <param name="fieldToPopulate">The field which will be populated</param>
         public GeneralFieldPopulator(IField fieldToPopulate)

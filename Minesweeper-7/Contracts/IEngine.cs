@@ -1,6 +1,7 @@
 ﻿namespace Minesweeper.Contracts
 {
     using System;
+
     /// <summary>
     /// Represents the engine that executes the main logic of the game. 
     /// </summary>

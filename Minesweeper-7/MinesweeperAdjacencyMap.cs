@@ -12,7 +12,7 @@
         private readonly IGeneratable item;
 
         /// <summary>
-        /// Populates the IField with the count of IGeneratables next to each empty cell
+        /// Initilizes a new instance of the <see cref="MinesweeperAdjacencyMap"/> class.
         /// </summary>
         /// <param name="field">The field which will be mapped</param>
         /// <param name="item">The item which the mapping will be calculated for</param>
@@ -23,7 +23,7 @@
         }
         
         /// <summary>
-        /// Map each empty cell of the field with its neighbouring items
+        /// Map each empty cell of the field with its neighbouring items.
         /// </summary>
         public  void CreateNeighboursMap()
         {

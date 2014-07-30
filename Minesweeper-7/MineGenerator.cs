@@ -8,7 +8,7 @@
         private readonly IField field;
 
         /// <summary>
-        /// Given a field the MineGenerator can populate it with any number of IGeneratable items
+        /// Initilizes a new instance of the <see cref="MineGenerator"/> class.
         /// </summary>
         /// <param name="fieldToPopulate">The field which will be populated</param>
         public MineGenerator(IField fieldToPopulate)

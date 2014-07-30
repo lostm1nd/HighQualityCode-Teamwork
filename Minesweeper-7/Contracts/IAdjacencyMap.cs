@@ -1,6 +1,6 @@
 ﻿namespace Minesweeper.Contracts
 {
-    interface IAdjacencyMap
+    public interface IAdjacencyMap
     {
         void CreateNeighboursMap();
     }

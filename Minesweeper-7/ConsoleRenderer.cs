@@ -28,8 +28,7 @@
         /// Renders the game field to the console.
         /// </summary>
         /// <param name="gameField">The field to be rendered.</param>
-        /// <param name="hasBoomed">Flag if player has exploded.</param>
-        public void RenderGameField(IField gameField, bool hasBoomed)
+        public void RenderGameField(IField gameField)
         {
             if (gameField == null)
             {
@@ -93,8 +92,6 @@
         {
             string commands = "Use 'top' to view the scoreboard, 'restart' to start a new game and 'exit' to quit  the game. ";
             Console.WriteLine(commands);
-             
-
         }
     }
 }

@@ -18,7 +18,7 @@
         private readonly OrderedMultiDictionary<int, string> scoreBoard;
 
         /// <summary>
-        /// Constructs an instance of the class.
+        /// Initializes a new instance of the <see cref="ScoreBoard"/> class.
         /// </summary>
         public ScoreBoard()
         {

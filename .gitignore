@@ -4,3 +4,9 @@ obj/
 
 # Solution files
 *.suo
+
+#StyleCop files
+*.Cache
+
+#JustCode files
+.JustCode

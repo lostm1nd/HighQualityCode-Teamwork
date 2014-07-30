@@ -1,5 +1,8 @@
 ﻿namespace Minesweeper.Contracts
 {
+    /// <summary>
+    /// Defines the basic functionality ot each field.
+    /// </summary>
     public interface IField
     {
         int Rows { get; }

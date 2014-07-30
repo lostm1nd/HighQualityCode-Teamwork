@@ -33,6 +33,30 @@
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestRenderingNullField()
+        {
+            renderer.RenderGameField(null);
+        }
+
+        [TestMethod]
+        public void TestRenderingValidField()
+        {
+            IField field = new Field(5, 10);
+
+            string expected = field.ToString() + Environment.NewLine;
+
+            using (StringWriter sw = new StringWriter())
+            {
+                Console.SetOut(sw);
+
+                renderer.RenderGameField(field);
+
+                Assert.AreEqual(expected, sw.ToString(), "The console renderer must invoke the toString() method of the field.");
+            }
+        }
+
+        [TestMethod]
         public void TestPrintExplosionMessage()
         {
             int score = 5;

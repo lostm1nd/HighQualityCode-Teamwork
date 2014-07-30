@@ -8,7 +8,7 @@
         private char symbol;
 
         /// <summary>
-        /// Creates a mine with a given symbol
+        /// Initilizes a new instance of the <see cref="Mine"/> class.
         /// </summary>
         /// <param name="symbol">The symbol to represent the mine</param>
         public Mine(char symbol)

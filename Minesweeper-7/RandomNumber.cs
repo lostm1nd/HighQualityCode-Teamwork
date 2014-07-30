@@ -4,17 +4,17 @@
 
     public static class RandomNumber
     {
-        static readonly Random generator = new Random();
+        static readonly Random Generator = new Random();
         
         public static int Get(int maxNumber)
         {
-            int number = generator.Next(maxNumber);
+            int number = Generator.Next(maxNumber);
             return number;
         }
 
         public static int Get(int minNumber, int maxNumber)
         {
-            int number = generator.Next(minNumber, maxNumber);
+            int number = Generator.Next(minNumber, maxNumber);
             return number;
         }
     }

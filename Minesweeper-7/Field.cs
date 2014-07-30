@@ -9,17 +9,17 @@
         private char[,] field;
 
         /// <summary>
-        /// Create a minefield with a specific size.
+        /// Initializes a new instance of the <see cref="Field"/> class.
         /// </summary>
         /// <param name="rows">The row count of the minefield</param>
         /// <param name="columns">The column count of the minefield</param>
         public Field(int rows, int columns)
         {
-            ValidateAndInitializeField(rows, columns);
+            this.ValidateAndInitializeField(rows, columns);
         }
 
         /// <summary>
-        /// Get the row count of the minefield
+        /// Gets the row count of the minefield
         /// </summary>
         public int Rows
         {
@@ -27,7 +27,7 @@
         }
 
         /// <summary>
-        /// Get the column count of the minefield
+        /// Gets the column count of the minefield
         /// </summary>
         public int Columns
         {
@@ -44,14 +44,14 @@
         {
             get
             {
-                ValidateIndexes(row, col);
+                this.ValidateIndexes(row, col);
 
                 return this.field[row, col];
             }
 
             set
             {
-                ValidateIndexes(row, col);
+                this.ValidateIndexes(row, col);
 
                 this.field[row, col] = value;
             }
@@ -65,9 +65,7 @@
         {
             StringBuilder stringifyField = new StringBuilder();
 
-            Console.WriteLine();
-            Console.WriteLine();
-            
+            stringifyField.AppendLine(Environment.NewLine);
             stringifyField.AppendLine("    0 1 2 3 4 5 6 7 8 9");
             stringifyField.AppendLine("   ----------------------");
 
@@ -78,6 +76,7 @@
                 {
                     stringifyField.Append(this.field[row, col] + " ");
                 }
+
                 stringifyField.AppendLine("|");
             }
 
