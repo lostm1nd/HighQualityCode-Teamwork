@@ -90,12 +90,14 @@
         {
             if (row < 0 || row >= this.Rows)
             {
-                Console.WriteLine("No such row ");
+                // Console.WriteLine("No such row ");
+                throw new IndexOutOfRangeException("Rows are in range [0, " + this.Rows + ")");
             }
 
             if (col < 0 || col >= this.Columns)
             {
-                Console.WriteLine("No such column.");
+                // Console.WriteLine("No such column.");
+                throw new IndexOutOfRangeException("Columns are in range [0, " + this.Columns + ")");
             }
             
         }
